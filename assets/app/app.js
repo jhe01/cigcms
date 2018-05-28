@@ -34,26 +34,38 @@ $(function(){
     // CB
     var checkGolfer = (res) => {
         var data = res.data;
-        console.log();
+        var golfer = data.golfer;
+        var booking = {};
+
+        if(data.booking){
+            booking = data.booking;
+        }
+        
+        var html = 'Confirmed Tag of <strong> ' +
+        golfer.salutation + ' ' + golfer.firstName + ' ' + golfer.lastName +
+        '</strong>' + (data.booking?'<br/> with Tee Time of <strong> ' + booking.teedate  + ' ' + booking.f9_starttime + '</strong>':'') + '<br/>' +
+        '<img src="'+ golfer.photo +'" alt="" class="circle responsive-img center-align">';
+
         if(res.status == 'OK'){
             swal({
                 title: 'Bag Claim Tag',
-                html: 'Confirmed Tag of <strong> ' +
-                data.salutation + ' ' + data.firstName + ' ' + data.lastName +
-                '</strong><br/> with Tee Time of <strong> ' + data.teedate  + ' ' + data.f9_starttime + '</strong><br/>' +
-                '<img src="'+ data.photo +'" alt="" class="circle responsive-img center-align">',
+                html: html,
                 input: 'text',
                 inputPlaceholder: 'Enter Bag Claim Tag',
                 showCancelButton: true,
                 inputValidator: function inputValidator(value) {
                     if(value){
                         var params = {                            
-                            bookingId: data.booking_no,
+                            
                             status: 'Checked-in',
-                            golferIdInt: data.ID,
-                            golferId: data.golfer_id,
+                            golferIdInt: golfer.ID,
+                            golferId: golfer.golfer_id,
                             bct: value
                         };
+
+                        if(data.booking){
+                            params.bookingId = booking.booking_no;                            
+                        }
                         
                         var ajxData = {
                             url: appUrl() + 'golfer/checkin_golfer',

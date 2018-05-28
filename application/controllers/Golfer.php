@@ -39,9 +39,9 @@ class Golfer extends CI_Controller {
 			$tag = $this->input->post('tag');
 			$this->load->model('Golfer_M', 'golfer_m');
 
-			$golfer = $this->golfer_m->get_golfer($tag);		
+			$data = $this->golfer_m->get_golfer($tag);		
 			$response['status'] = 'OK';
-			$response['data'] = $golfer;
+			$response['data'] = $data;
 			echo json_encode($response);
 		}
 	}
@@ -53,21 +53,24 @@ class Golfer extends CI_Controller {
 			);
 
 			$u_params = array(
-				'booking_no' => $this->input->post('bookingId'),
-				'golfer_id' => $this->input->post('golferId')
+				'golfer_id' => $this->input->post('golferId'),
 			);
+
+			if($this->input->post('bookingId')){
+				$u_params['booking_no'] = $this->input->post('bookingId');
+			}
 
 			$i_params = array(
 				'bct' =>  $this->input->post('bct'),
-				'golfer_id_int' =>  $this->input->post('golferIdInt')
+				'golfer_id_int' =>  $this->input->post('golferIdInt'),
 			);
 
 			$this->load->model('Golfer_M', 'golfer_m');
 			
-			$golfer = $this->golfer_m->checkin_golfer($u_data, $u_params, $i_params);
+			$data = $this->golfer_m->checkin_golfer($u_data, $u_params, $i_params);
 
 			$response['status'] = 'OK';
-			$response['golfer'] = $golfer;
+			$response['data'] = $data;
 
 			echo json_encode($response);
 		}

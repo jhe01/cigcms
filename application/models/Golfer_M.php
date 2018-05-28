@@ -12,13 +12,24 @@ class Golfer_M extends CI_Model
 	public function get_golfer($tag){
 		$params = array('nfc_tag' => $tag, 'teedate' => date('Y-m-d'));
 
-		$player = $this->db->select('golfer.golfer_id, golfer.ID, golfer.salutation, golfer.firstName, golfer.lastName, golfer.photo, booking.teedate, booking.booking_no, booking.f9_starttime')
-		->from('booking')
-		->join('golfer', 'golfer.golfer_id = booking.golfer_id')
-		->where($params)
+		$player = $this->db->select('golfer.golfer_id, golfer.ID, golfer.salutation, golfer.firstName, golfer.lastName, golfer.photo')
+		->from('golfer')
+		->where('nfc_tag', $params['nfc_tag'])
 		->get();
 
-		return $player->row();
+		$count = 0;
+		$response['golfer'] = $player->row();
+
+		$booking = $this->db->select('*')
+		->from('booking')
+		->where('teedate', $params['teedate'], 'golfer_id', $response['golfer']->golfer_id)
+		->get();
+
+		if($booking->num_rows() > 0){
+			$response['booking'] = $booking->row();
+		}
+
+		return $response;
 	}
 
 	public function checkin_golfer($data, $u_params, $i_params){
@@ -29,24 +40,38 @@ class Golfer_M extends CI_Model
 			'bagdrop_id' => nuID(),
 		);
 
-		$this->db->where($u_params);
-		$this->db->update('booking', $data);
 		$this->db->insert('bagdrop', $bag_drop);
 
 		if($this->db->insert_id()){
-			return $this->db->select('golfer.golfer_id, golfer.ID, golfer.salutation, golfer.firstName, golfer.lastName, golfer.photo, booking.teedate, booking.booking_no, booking.f9_starttime')
-			->from('booking')
-			->join('golfer', 'golfer.golfer_id = booking.golfer_id')
-			->where('golfer.golfer_id', $u_params['golfer_id'])
+			if($u_params['booking_no']){
+				$booking = $this->db->where($u_params)->get('booking');
+
+				if($booking->num_rows() > 0){
+					$this->db->where($u_params);
+					$this->db->update('booking', $data);
+				}
+			}
+			
+			$response['golfer'] = $this->db->select('golfer_id, ID, salutation, firstName, lastName, photo')
+			->from('golfer')
+			->where('golfer_id', $u_params['golfer_id'])
 			->get()
 			->row();
+
+			$bkng = $this->db->select('*')
+			->from('booking')
+			->where('teedate', $booking->row()->teedate, 'golfer_id', $response['golfer']->golfer_id)
+			->get();
+
+			if($bkng->num_rows() > 0){
+				$response['booking'] = $bkng->row();
+			}
+
+			return $response;
 		}else{
 			return false;
 		}
 	}
 
-	public function get_golfer_with_id($golfer_id){
-		$golfer = $this->db->get('golfer')->where('golfer_id', $golfer_id);
-		return $golfer->row();
-	}
+
 }
