@@ -5,49 +5,35 @@
 		<table class="striped responsive-table">
 			<thead>
 				<tr>
+					<th style="width:10%;">Image</th>
 					<th>Name</th>
 					<th>Arrival Time</th>
 					<th>Delinquent</th>
 					<th>Daycard</th>
 					<th>Bag Tag</th>
-					<th style="width:20%;">Action</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr>
-					<td>Juan Dela Cruz</td>
-					<td>2018-05-28 05:00 AM</td>
-					<td>Active</td>
-					<td>-</td>
-					<td>SDAF2414</td>
-					<td>
-						<a class="waves-effect waves-light btn">Assign Daycard</a>
-					</td>
-				</tr>
-				<tr>
-					<td>Juana Dela Cruz</td>
-					<td>2018-05-28 04:50 AM</td>
-					<td>Active</td>
-					<td>OK</td>
-					<td>SDAF2414</td>
-					<td>
-						<a class="waves-effect waves-light btn">Change TeeTime</a>
-						<a class="waves-effect waves-light btn">Addons</a>
-					</td>
-				</tr>
-				<tr>
-					<td>Juane Dela Cruz</td>
-					<td>2018-05-28 04:40 AM</td>
-					<td>Delinquent</td>
-					<td>OK</td>
-					<td>SDAF2414</td>
-					<td>
-						<a class="waves-effect waves-light btn">Change TeeTime</a>
-						<a class="waves-effect waves-light btn">Addons</a>
-					</td>
-				</tr>
-				<?php print_r($arrived_golfers);?>
+				<?php foreach($arrived_golfers as $arrived_golfer){ ?>
+					<tr>
+						<td><img src="<?= $arrived_golfer->photo?>" alt="Player Image" class="circle responsive-img center-align"></td>
+						<td><?= $arrived_golfer->salutation.' '.$arrived_golfer->firstName.' '.$arrived_golfer->middleName.' '.$arrived_golfer->lastName?></td>
+						<td><?= $arrived_golfer->bagdrop_dt?></td>
+						<td>-- SOON --</td>
+						<td><?= $arrived_golfer->daycard?></td>
+						<td><?= $arrived_golfer->bct?></td>
+						<td>
+							<?php if($arrived_golfer->daycard != ""){?>
+								<a class="waves-effect waves-light btn">Change TeeTime</a>
+								<a class="waves-effect waves-light btn">Addons</a>
+							<?php }else{?>
+								<a class="waves-effect waves-light btn">Assign Daycard</a>
+							<?php }?>
+						</td>
+					</tr>
+				<?php } ?>				
 			</tbody>
 		</table>
 	</div>
