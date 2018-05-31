@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Foresh Hills Golf & Country Club - GCMS</title>
+	<title>Forest Hills Golf & Country Club - GCMS</title>
 	
 	<?=app_asset_css('materialize/fonts/material-icons.css');?>
 	<?=app_asset_css('materialize/css/materialize.min.css');?>

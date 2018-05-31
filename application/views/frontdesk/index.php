@@ -1,14 +1,15 @@
 <div class="row">
 	<div class="col s12">
-		<h3>Bag Drop Check-in List</h3>
+		<h3>Check-in List</h3>
 
 		<table class="striped responsive-table">
 			<thead>
 				<tr>
-					<th style="width:10%;">Image</th>
+					<th>Image</th>
 					<th>Name</th>
 					<th>Arrival Time</th>
 					<th>Delinquent</th>
+					<th>Tee Time</th>
 					<th>Daycard</th>
 					<th>Bag Tag</th>
 					<th>Action</th>
@@ -17,20 +18,31 @@
 
 			<tbody>
 				<?php foreach($arrived_golfers as $arrived_golfer){ ?>
-					<tr>
-						<td><img src="<?= $arrived_golfer->photo?>" alt="Player Image" class="circle responsive-img center-align"></td>
+
+					<tr data-golfer-id="<?=$arrived_golfer->golfer_id?>">
+						<td><img style="width:30%" src="<?= $arrived_golfer->photo?>" alt="Player Image" class="circle responsive-img center-align"></td>
 						<td><?= $arrived_golfer->salutation.' '.$arrived_golfer->firstName.' '.$arrived_golfer->middleName.' '.$arrived_golfer->lastName?></td>
 						<td><?= $arrived_golfer->bagdrop_dt?></td>
 						<td>-- SOON --</td>
-						<td><?= $arrived_golfer->daycard?></td>
+						<?php if(property_exists($arrived_golfer, 'booking')){?>
+							<td><?=$arrived_golfer->booking->teedate." ".$arrived_golfer->booking->f9_starttime?></td>
+							<td><?= $arrived_golfer->booking->daycard?></td>
+						<?php }else{ ?>
+							<td>NO BOOKING</td>
+							<td>--------</td>
+						<?php }?>
 						<td><?= $arrived_golfer->bct?></td>
 						<td>
-							<?php if($arrived_golfer->daycard != ""){?>
+						<?php if(property_exists($arrived_golfer, 'booking')){?>
+							<?php if($arrived_golfer->booking->daycard != ""){?>
 								<a class="waves-effect waves-light btn">Change TeeTime</a>
 								<a class="waves-effect waves-light btn">Addons</a>
 							<?php }else{?>
-								<a class="waves-effect waves-light btn">Assign Daycard</a>
+								<a class="waves-effect waves-light btn btn-daycard">Assign Daycard</a>
 							<?php }?>
+						<?php }else{?>
+							<a class="waves-effect waves-light btn btn-book-teetime">Book Tee Time</a>
+						<?php }?>
 						</td>
 					</tr>
 				<?php } ?>				

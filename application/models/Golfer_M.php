@@ -19,10 +19,14 @@ class Golfer_M extends CI_Model
 
 		$count = 0;
 		$response['golfer'] = $player->row();
-
+		$b_params = array(
+			'teedate' => $params['teedate'],
+			'golfer_id' => $response['golfer']->golfer_id,
+			'status' => 'Confirmed'
+		);
 		$booking = $this->db->select('*')
 		->from('booking')
-		->where('teedate', $params['teedate'], 'golfer_id', $response['golfer']->golfer_id)
+		->where($b_params)
 		->get();
 
 		if($booking->num_rows() > 0){
@@ -43,7 +47,7 @@ class Golfer_M extends CI_Model
 		$this->db->insert('bagdrop', $bag_drop);
 
 		if($this->db->insert_id()){
-			if($u_params['booking_no']){
+			if(array_key_exists('booking_no', $u_params)){
 				$booking = $this->db->where($u_params)->get('booking');
 
 				if($booking->num_rows() > 0){
@@ -58,13 +62,15 @@ class Golfer_M extends CI_Model
 			->get()
 			->row();
 
-			$bkng = $this->db->select('*')
-			->from('booking')
-			->where('teedate', $booking->row()->teedate, 'golfer_id', $response['golfer']->golfer_id)
-			->get();
-
-			if($bkng->num_rows() > 0){
-				$response['booking'] = $bkng->row();
+			if(isset($booking)){
+				$bkng = $this->db->select('*')
+				->from('booking')
+				->where(array('teedate' => $booking->row()->teedate, 'golfer_id' =>  $response['golfer']->golfer_id))
+				->get();
+				if($bkng->num_rows() > 0){
+					$response['booking'] = $bkng->row();
+				}
+				
 			}
 
 			return $response;

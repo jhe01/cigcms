@@ -31,7 +31,24 @@ $(function(){
         app.ajax(ajxData);
     });
 
-    // CB
+    $('.btn-daycard').on('click', function(){
+        var g_id = $(this).closest("tr").data('golfer-id');
+        
+        swal({
+            title: 'Bag Claim Tag',
+            input: 'text',
+            inputPlaceholder: 'Enter Daycard',
+            showCancelButton: true,
+            inputValidator: function inputValidator(value) {
+                if(value){
+                    console.log(g_id);
+                }else{
+                    return 'Please enter daycard details!';
+                }
+            }
+        });
+    });
+
     var checkGolfer = (res) => {
         var data = res.data;
         var golfer = data.golfer;
