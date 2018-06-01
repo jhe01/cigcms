@@ -1,39 +1,384 @@
 <div class="row" style="margin-top: 4em;">
 	<h3 class="center-align">Tee Times of The Day</h3>
-	<div class="col s12 m4">
-		<table>
+	<div class="col s12 m3">
+		<table class="teetime-table centered">
 			<thead>
 				<tr>
-					<th>Name</th>
-					<th>Item Name</th>
-					<th>Item Price</th>
+					<th>TEE TIME</th>
+					<th>OCCUPIED</th>
+					<th>ACTION</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<tr>
-					<td>Alvin</td>
-					<td>Eclair</td>
-					<td>$0.87</td>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
 				</tr>
 				<tr>
-					<td>Alan</td>
-					<td>Jellybean</td>
-					<td>$3.76</td>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
 				</tr>
 				<tr>
-					<td>Jonathan</td>
-					<td>Lollipop</td>
-					<td>$7.00</td>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
 				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>				
 			</tbody>
 		</table>
 	</div>
-	<div class="col s12 m4">
+	<div class="col s12 m3">
+		<table class="teetime-table centered">
+			<thead>
+				<tr>
+					<th>TEE TIME</th>
+					<th>OCCUPIED</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>				
+			</tbody>
+		</table>
+	</div>
+	<div class="col s12 m3">
+		<table class="teetime-table centered">
+			<thead>
+				<tr>
+					<th>TEE TIME</th>
+					<th>OCCUPIED</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>				
+			</tbody>
+		</table>
+
 		
 	</div>
-	<div class="col s12 m4">
-	
+	<div class="col s12 m3">
+		<table class="teetime-table centered">
+			<thead>
+				<tr>
+					<th>TEE TIME</th>
+					<th>OCCUPIED</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:40</td>
+					<td>3</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:50</td>
+					<td>2</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>
+				<tr>
+					<td>5:30</td>
+					<td>4</td>
+					<td><button class="waves-effect waves-light btn">SHOW FLIGHTMATES</button></td>
+				</tr>				
+			</tbody>
+		</table>
+
+		
 	</div>
 </div>
 <script type="text/javascript">
