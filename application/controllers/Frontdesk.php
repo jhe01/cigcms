@@ -14,6 +14,6 @@ class Frontdesk extends CI_Controller {
 			'arrived_golfers' => $this->frontdesk->get()
 		);
 
-		$this->template->load('template/template', 'frontdesk/index', $data);
+		//$this->template->load('template/template', 'frontdesk/index', $data);
 	}
 }

@@ -20,7 +20,7 @@ class Bagdrop extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data = array();
-		$this->template->load('template/template', 'bagdrop/index', $data);
+		//$data = array();
+		//$this->template->load('template/template', 'bagdrop/index', $data);
 	}
 }
