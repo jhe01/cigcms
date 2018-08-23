@@ -103,7 +103,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<li>
 			<div class="row">
 				<div class="col m12">
-					<a class="waves-effect waves-light btn" id="setSettings" style="width:100%;">SET</a>	
+					<a class="waves-effect waves-light btn" id="setSettings" style="width:100%;">SET</a>
+					<a class="waves-effect waves-light btn" id="btnA" style="width:100%;">SET</a>		
 				</div>
 			</div>			
 		</li>
@@ -168,7 +169,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<script>
 		$(function(e){
+			$("#btnA").on('click', function(){
+				if (document.documentElement.requestFullScreen) {
+					document.documentElement.requestFullScreen();
+				} else if (document.documentElement.mozRequestFullScreen) {
+					document.documentElement.mozRequestFullScreen();
+				} else if (document.documentElement.webkitRequestFullScreen) {
+					document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+				}
+			});
 			$('#coursesSelect').formSelect();
+			
 		});
 	</script>
 	<?= $contents ?>
