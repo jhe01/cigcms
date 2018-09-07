@@ -127,6 +127,7 @@ let fids = {
     getFlightsCallback: (res) => {
         fids.flights = res.flight_f;
         fids.renderFlights(fids.flights);
+        console.log(fids.flights);
     },
     renderFlights: (flights) => {
         var tBody = fids.fidsTable.find('tbody'); 
@@ -201,7 +202,7 @@ let fids = {
         //if (!voice) return;
         msg.lang = 'en-US';
         msg.voice = voices[0];
-        console.log(voices);
+        //console.log(voices);
         msg.onstart = function (e) {
             clearInterval(fids.announcementInterval);
             //console.log(row);

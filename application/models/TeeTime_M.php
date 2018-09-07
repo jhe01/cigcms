@@ -41,7 +41,6 @@ class TeeTime_M extends CI_Model
 		->join('golfer', 'flightmate.golfer_id = golfer.golfer_Id')
 		->get()->result();
 
-
 		$cnt_f = 0;
 		$cnt_fm = 0;
 		
