@@ -16,10 +16,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	
 	<script type="text/javascript">
-		var surl = () => {
-			return '<?= app_sokcket_url();?>';
-		}
-
 		var appUrl = () => {
 			return '<?= base_url();?>';
 		}
@@ -76,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="input-field col m12">
 					<select id="coursesSelect">
 						<option value="" disabled selected>Choose Golf Course</option>
-						<option value="p">Palmer</option>
-						<option value="n">Nicklaus</option>
+						<option value="Palmer">Palmer</option>
+						<option value="Nicklaus">Nicklaus</option>
 					</select>					
 				</div>
 			</div>			
@@ -104,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col m12">
 					<a class="waves-effect waves-light btn" id="setSettings" style="width:100%;">SET</a>
-					<a class="waves-effect waves-light btn" id="btnA" style="width:100%;">SET</a>		
+					<a class="waves-effect waves-light btn" id="btnA" style="width:100%;">Enter Full Screen</a>		
 				</div>
 			</div>			
 		</li>
@@ -167,6 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<i class="large material-icons">menu</i>
 		</a>
 	</div>
+	<?= $contents ?>
 	<script>
 		$(function(e){
 			$("#btnA").on('click', function(){
@@ -182,6 +179,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		});
 	</script>
-	<?= $contents ?>
+	
 </body>
 </html>
